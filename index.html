@@ -210,8 +210,8 @@
     margin: 0 3rem;
   }
 
-  /* ── BUCKETS GRID ── */
-  .eggs-section {
+  /* ── BASKETS GRID ── */
+  .baskets-section {
     padding: 4rem 3rem 6rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -235,7 +235,7 @@
     font-size: 0.85rem;
   }
 
-  .eggs-grid {
+  .baskets-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 1px;
@@ -244,7 +244,7 @@
     border-radius: 2px;
   }
 
-  .egg-card {
+  .basket-card {
     background: var(--bg2);
     padding: 2rem 1.5rem 2.5rem;
     display: flex;
@@ -256,7 +256,7 @@
     overflow: hidden;
   }
 
-  .egg-card::before {
+  .basket-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
@@ -265,60 +265,60 @@
     transition: opacity 0.25s;
   }
 
-  .egg-card:hover { background: var(--bg3); }
-  .egg-card:hover::before { opacity: 1; }
+  .basket-card:hover { background: var(--bg3); }
+  .basket-card:hover::before { opacity: 1; }
 
-  /* Per-egg accent colors */
-  .egg-1 { --egg-color: #8b5cf6; --egg-glow: rgba(139,92,246,0.15); }
-  .egg-2 { --egg-color: #6366f1; --egg-glow: rgba(99,102,241,0.15); }
-  .egg-3 { --egg-color: #3b82f6; --egg-glow: rgba(59,130,246,0.15); }
-  .egg-4 { --egg-color: #22c55e; --egg-glow: rgba(34,197,94,0.15); }
-  .egg-5 { --egg-color: #eab308; --egg-glow: rgba(234,179,8,0.15); }
-  .egg-6 { --egg-color: #f97316; --egg-glow: rgba(249,115,22,0.15); }
-  .egg-7 { --egg-color: #ef4444; --egg-glow: rgba(239,68,68,0.15); }
+  /* Per-basket accent colors */
+  .basket-1 { --basket-color: #8b5cf6; --basket-glow: rgba(139,92,246,0.15); }
+  .basket-2 { --basket-color: #6366f1; --basket-glow: rgba(99,102,241,0.15); }
+  .basket-3 { --basket-color: #3b82f6; --basket-glow: rgba(59,130,246,0.15); }
+  .basket-4 { --basket-color: #22c55e; --basket-glow: rgba(34,197,94,0.15); }
+  .basket-5 { --basket-color: #eab308; --basket-glow: rgba(234,179,8,0.15); }
+  .basket-6 { --basket-color: #f97316; --basket-glow: rgba(249,115,22,0.15); }
+  .basket-7 { --basket-color: #ef4444; --basket-glow: rgba(239,68,68,0.15); }
 
-  .egg-card::before { background: var(--egg-color); }
+  .basket-card::before { background: var(--basket-color); }
 
-  /* ── BUCKET ICON ── */
-  .egg-svg-handle {
-    stroke: var(--egg-color);
+  /* ── BASKET ICON ── */
+  .basket-svg-handle {
+    stroke: var(--basket-color);
     stroke-width: 1.5;
     fill: none;
     opacity: 0.55;
   }
 
-  /* The bucket illustration */
-  .bucket-icon {
+  /* The basket illustration */
+  .basket-icon {
     width: 58px;
     height: 52px;
     margin: 0 auto;
   }
 
-  .egg-svg-body {
-    fill: var(--egg-glow);
-    stroke: var(--egg-color);
+  .basket-svg-body {
+    fill: var(--basket-glow);
+    stroke: var(--basket-color);
     stroke-width: 1px;
     transition: fill 0.3s;
   }
 
-  .egg-card:hover .egg-svg-body {
-    fill: var(--egg-glow);
+  .basket-card:hover .basket-svg-body {
+    fill: var(--basket-glow);
   }
 
-  .egg-svg-sheen {
-    fill: var(--egg-color);
+  .basket-svg-sheen {
+    fill: var(--basket-color);
     opacity: 0.25;
   }
 
-  .egg-number {
+  .basket-number {
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem;
     letter-spacing: 0.18em;
-    color: var(--egg-color);
+    color: var(--basket-color);
     text-align: center;
   }
 
-  .egg-name {
+  .basket-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.05rem;
     font-weight: 600;
@@ -327,14 +327,14 @@
     line-height: 1.2;
   }
 
-  .egg-subtitle {
+  .basket-subtitle {
     font-size: 0.72rem;
     color: var(--muted);
     text-align: center;
     letter-spacing: 0.04em;
   }
 
-  .egg-purpose {
+  .basket-purpose {
     font-size: 0.75rem;
     color: var(--muted);
     text-align: center;
@@ -345,7 +345,7 @@
     background: var(--bg3);
   }
 
-  .egg-holdings {
+  .basket-eggs {
     list-style: none;
     margin-top: auto;
     border-top: 1px solid var(--line);
@@ -357,12 +357,12 @@
     font-size: 0.55rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--egg-color);
+    color: var(--basket-color);
     opacity: 0.7;
     margin-bottom: 0.4rem;
   }
 
-  .egg-holdings li {
+  .basket-eggs li {
     font-size: 0.72rem;
     color: var(--muted);
     padding: 0.2rem 0;
@@ -371,7 +371,7 @@
     line-height: 1.4;
   }
 
-  .egg-holdings li::before {
+  .basket-eggs li::before {
     content: '';
     position: absolute;
     left: 0;
@@ -379,7 +379,7 @@
     width: 4px;
     height: 6px;
     border-radius: 50%;
-    background: var(--egg-color);
+    background: var(--basket-color);
     opacity: 0.6;
   }
 
@@ -495,27 +495,27 @@
   }
 
   .hero { animation: fadeUp 0.7s ease both; }
-  .eggs-section { animation: fadeUp 0.7s 0.15s ease both; }
+  .baskets-section { animation: fadeUp 0.7s 0.15s ease both; }
   .planning-section { animation: fadeUp 0.7s 0.3s ease both; }
 
-  .egg-card:nth-child(1) { animation: fadeUp 0.5s 0.05s ease both; }
-  .egg-card:nth-child(2) { animation: fadeUp 0.5s 0.10s ease both; }
-  .egg-card:nth-child(3) { animation: fadeUp 0.5s 0.15s ease both; }
-  .egg-card:nth-child(4) { animation: fadeUp 0.5s 0.20s ease both; }
-  .egg-card:nth-child(5) { animation: fadeUp 0.5s 0.25s ease both; }
-  .egg-card:nth-child(6) { animation: fadeUp 0.5s 0.30s ease both; }
-  .egg-card:nth-child(7) { animation: fadeUp 0.5s 0.35s ease both; }
+  .basket-card:nth-child(1) { animation: fadeUp 0.5s 0.05s ease both; }
+  .basket-card:nth-child(2) { animation: fadeUp 0.5s 0.10s ease both; }
+  .basket-card:nth-child(3) { animation: fadeUp 0.5s 0.15s ease both; }
+  .basket-card:nth-child(4) { animation: fadeUp 0.5s 0.20s ease both; }
+  .basket-card:nth-child(5) { animation: fadeUp 0.5s 0.25s ease both; }
+  .basket-card:nth-child(6) { animation: fadeUp 0.5s 0.30s ease both; }
+  .basket-card:nth-child(7) { animation: fadeUp 0.5s 0.35s ease both; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1100px) {
-    .eggs-grid { grid-template-columns: repeat(4, 1fr); }
+    .baskets-grid { grid-template-columns: repeat(4, 1fr); }
   }
   @media (max-width: 768px) {
     header { padding: 1.2rem 1.5rem; }
     nav { display: none; }
     .hero { grid-template-columns: 1fr; padding: 4rem 1.5rem 3rem; gap: 2.5rem; }
-    .eggs-section { padding: 3rem 1.5rem; }
-    .eggs-grid { grid-template-columns: repeat(2, 1fr); }
+    .baskets-section { padding: 3rem 1.5rem; }
+    .baskets-grid { grid-template-columns: repeat(2, 1fr); }
     .planning-grid { grid-template-columns: 1fr; }
     .philosophy { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2rem; }
     footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
@@ -527,7 +527,7 @@
 <header>
   <div class="logo">Dhamma <span>Dhan</span><span class="logo-tagline">Rightful Wealth</span></div>
   <nav>
-    <a href="#eggs">The Seven Buckets</a>
+    <a href="#baskets">The Seven Baskets</a>
     <a href="#planning">Planning</a>
     <a href="#philosophy">Dharma</a>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
@@ -544,10 +544,10 @@
     <h1>Wealth earned<br>with clarity,<br>held with <em>dharma.</em></h1>
   </div>
   <div class="hero-right">
-    <p>Dhamma Dhan is the practice of building wealth in alignment with right action — not just what grows, but what is sound, purposeful, and worthy of being passed forward. Seven buckets. Multiple instruments. A complete life's portfolio.</p>
+    <p>Dhamma Dhan is the practice of building wealth in alignment with right action — not just what grows, but what is sound, purposeful, and worthy of being passed forward. Seven baskets. Many eggs. A complete life's portfolio.</p>
     <dl class="hero-stats">
       <div class="stat-item">
-        <dt>Buckets</dt>
+        <dt>Baskets</dt>
         <dd>7</dd>
       </div>
       <div class="stat-item">
@@ -564,30 +564,30 @@
 
 <hr class="section-divider">
 
-<!-- EGGS GRID -->
-<section class="eggs-section" id="eggs">
+<!-- BASKETS GRID -->
+<section class="baskets-section" id="baskets">
   <div class="section-header">
-    <h2>The Seven Buckets</h2>
-    <p>Each bucket holds its instruments — chosen for purpose, time horizon, and life stage.</p>
+    <h2>The Seven Baskets</h2>
+    <p>Each basket holds its eggs — instruments chosen for purpose, time horizon, and life stage.</p>
   </div>
 
-  <div class="eggs-grid">
+  <div class="baskets-grid">
 
     <!-- 1. Violet -->
-    <article class="egg-card egg-1">
-      <p class="egg-number">01 — VIOLET</p>
-      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
-        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
-        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+    <article class="basket-card basket-1">
+      <p class="basket-number">01 — VIOLET</p>
+      <svg class="basket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="basket-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="basket-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="basket-svg-handle"/>
       </svg>
       <div>
-        <p class="egg-name">Cash &amp;<br>Liquidity</p>
-        <p class="egg-subtitle">Immediate access</p>
+        <p class="basket-name">Cash &amp;<br>Liquidity</p>
+        <p class="basket-subtitle">Immediate access</p>
       </div>
-      <p class="egg-purpose"><strong>Self, Family &amp; Dependents:</strong> Providing for your own comfort and the well-being of your parents, spouse, children, and workers.</p>
-      <p class="eggs-label">Instruments</p>
-      <ul class="egg-holdings">
+      <p class="basket-purpose"><strong>Self, Family &amp; Dependents:</strong> Providing for your own comfort and the well-being of your parents, spouse, children, and workers.</p>
+      <p class="eggs-label">Eggs</p>
+      <ul class="basket-eggs">
         <li>Savings account</li>
         <li>Liquid funds</li>
         <li>Fixed deposits</li>
@@ -595,20 +595,20 @@
     </article>
 
     <!-- 2. Indigo -->
-    <article class="egg-card egg-2">
-      <p class="egg-number">02 — INDIGO</p>
-      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
-        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
-        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+    <article class="basket-card basket-2">
+      <p class="basket-number">02 — INDIGO</p>
+      <svg class="basket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="basket-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="basket-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="basket-svg-handle"/>
       </svg>
       <div>
-        <p class="egg-name">Sovereign<br>Safety</p>
-        <p class="egg-subtitle">Government-backed</p>
+        <p class="basket-name">Sovereign<br>Safety</p>
+        <p class="basket-subtitle">Government-backed</p>
       </div>
-      <p class="egg-purpose"><strong>Security against Calamities:</strong> Guarding resources against unexpected losses from fire, floods, rulers, thieves, or unloved heirs.</p>
-      <p class="eggs-label">Instruments</p>
-      <ul class="egg-holdings">
+      <p class="basket-purpose"><strong>Security against Calamities:</strong> Guarding resources against unexpected losses from fire, floods, rulers, thieves, or unloved heirs.</p>
+      <p class="eggs-label">Eggs</p>
+      <ul class="basket-eggs">
         <li>EPF/VPF</li>
         <li>PPF</li>
         <li>Gov/RBI Bonds</li>
@@ -616,20 +616,20 @@
     </article>
 
     <!-- 3. Blue -->
-    <article class="egg-card egg-3">
-      <p class="egg-number">03 — BLUE</p>
-      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
-        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
-        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+    <article class="basket-card basket-3">
+      <p class="basket-number">03 — BLUE</p>
+      <svg class="basket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="basket-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="basket-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="basket-svg-handle"/>
       </svg>
       <div>
-        <p class="egg-name">Balanced &amp;<br>Retirement</p>
-        <p class="egg-subtitle">Steady compounding</p>
+        <p class="basket-name">Balanced &amp;<br>Retirement</p>
+        <p class="basket-subtitle">Steady compounding</p>
       </div>
-      <p class="egg-purpose"><strong>Friends &amp; Associates:</strong> Sharing happiness and maintaining harmonious relationships by supporting friends, family, and colleagues.</p>
-      <p class="eggs-label">Instruments</p>
-      <ul class="egg-holdings">
+      <p class="basket-purpose"><strong>Friends &amp; Associates:</strong> Sharing happiness and maintaining harmonious relationships by supporting friends, family, and colleagues.</p>
+      <p class="eggs-label">Eggs</p>
+      <ul class="basket-eggs">
         <li>NPS</li>
         <li>Conservative hybrid funds</li>
         <li>Corporate debt</li>
@@ -637,20 +637,20 @@
     </article>
 
     <!-- 4. Green -->
-    <article class="egg-card egg-4">
-      <p class="egg-number">04 — GREEN</p>
-      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
-        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
-        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+    <article class="basket-card basket-4">
+      <p class="basket-number">04 — GREEN</p>
+      <svg class="basket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="basket-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="basket-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="basket-svg-handle"/>
       </svg>
       <div>
-        <p class="egg-name">Core<br>Growth</p>
-        <p class="egg-subtitle">Market participation</p>
+        <p class="basket-name">Core<br>Growth</p>
+        <p class="basket-subtitle">Market participation</p>
       </div>
-      <p class="egg-purpose"><strong>Fivefold Oblations:</strong> Fulfilling social and familial duties by making offerings to relatives, guests, ancestors, the state/king, and deities.</p>
-      <p class="eggs-label">Instruments</p>
-      <ul class="egg-holdings">
+      <p class="basket-purpose"><strong>Fivefold Oblations:</strong> Fulfilling social and familial duties by making offerings to relatives, guests, ancestors, the state/king, and deities.</p>
+      <p class="eggs-label">Eggs</p>
+      <ul class="basket-eggs">
         <li>Index funds</li>
         <li>Flexicap mutual funds</li>
         <li>Balanced Advantage Fund</li>
@@ -658,20 +658,20 @@
     </article>
 
     <!-- 5. Yellow -->
-    <article class="egg-card egg-5">
-      <p class="egg-number">05 — YELLOW</p>
-      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
-        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
-        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+    <article class="basket-card basket-5">
+      <p class="basket-number">05 — YELLOW</p>
+      <svg class="basket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="basket-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="basket-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="basket-svg-handle"/>
       </svg>
       <div>
-        <p class="egg-name">Conviction<br>Equity</p>
-        <p class="egg-subtitle">High-confidence bets</p>
+        <p class="basket-name">Conviction<br>Equity</p>
+        <p class="basket-subtitle">High-confidence bets</p>
       </div>
-      <p class="egg-purpose"><strong>Spiritual Community Support:</strong> Providing charity and alms to ethical contemplatives, monks, and spiritual teachers dedicated to peace.</p>
-      <p class="eggs-label">Instruments</p>
-      <ul class="egg-holdings">
+      <p class="basket-purpose"><strong>Spiritual Community Support:</strong> Providing charity and alms to ethical contemplatives, monks, and spiritual teachers dedicated to peace.</p>
+      <p class="eggs-label">Eggs</p>
+      <ul class="basket-eggs">
         <li>Direct equity</li>
         <li>Business</li>
         <li>Private Equity</li>
@@ -679,20 +679,20 @@
     </article>
 
     <!-- 6. Orange -->
-    <article class="egg-card egg-6">
-      <p class="egg-number">06 — ORANGE</p>
-      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
-        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
-        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+    <article class="basket-card basket-6">
+      <p class="basket-number">06 — ORANGE</p>
+      <svg class="basket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="basket-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="basket-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="basket-svg-handle"/>
       </svg>
       <div>
-        <p class="egg-name">Store of<br>Value</p>
-        <p class="egg-subtitle">Inflation hedge</p>
+        <p class="basket-name">Store of<br>Value</p>
+        <p class="basket-subtitle">Inflation hedge</p>
       </div>
-      <p class="egg-purpose">Preservation of wealth across generations without speculation — value protected for those who come after.</p>
-      <p class="eggs-label">Instruments</p>
-      <ul class="egg-holdings">
+      <p class="basket-purpose">Preservation of wealth across generations without speculation — value protected for those who come after.</p>
+      <p class="eggs-label">Eggs</p>
+      <ul class="basket-eggs">
         <li>Physical gold</li>
         <li>Gold ETFs</li>
         <li>Sovereign Gold Bonds</li>
@@ -700,20 +700,20 @@
     </article>
 
     <!-- 7. Red -->
-    <article class="egg-card egg-7">
-      <p class="egg-number">07 — RED</p>
-      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
-        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
-        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+    <article class="basket-card basket-7">
+      <p class="basket-number">07 — RED</p>
+      <svg class="basket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="basket-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="basket-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="basket-svg-handle"/>
       </svg>
       <div>
-        <p class="egg-name">Legacy &amp;<br>Hard Assets</p>
-        <p class="egg-subtitle">Generational wealth</p>
+        <p class="basket-name">Legacy &amp;<br>Hard Assets</p>
+        <p class="basket-subtitle">Generational wealth</p>
       </div>
-      <p class="egg-purpose">Durable assets that outlast a single lifetime — what you leave behind serves those who inherit it.</p>
-      <p class="eggs-label">Instruments</p>
-      <ul class="egg-holdings">
+      <p class="basket-purpose">Durable assets that outlast a single lifetime — what you leave behind serves those who inherit it.</p>
+      <p class="eggs-label">Eggs</p>
+      <ul class="basket-eggs">
         <li>REITs</li>
         <li>Residential property</li>
         <li>Commercial Property</li>
@@ -726,13 +726,13 @@
 <!-- PLANNING -->
 <section class="planning-section" id="planning">
   <div class="planning-intro">
-    <h2>Building Your Buckets</h2>
-    <p>A practical framework to organize your financial life across the seven buckets. Begin with your daily reality—expenses and dependents—then build safety layers, then move toward growth and legacy.</p>
+    <h2>Building Your Baskets</h2>
+    <p>A practical framework to organize your financial life across the seven baskets. Begin with your daily reality—expenses and dependents—then build safety layers, then move toward growth and legacy.</p>
   </div>
 
   <div class="planning-grid">
     <div class="planning-phase">
-      <h3>Bucket 1: Foundation</h3>
+      <h3>Basket 1: Foundation</h3>
       <ol>
         <li><strong>Identify monthly expense.</strong> Your baseline outflow for household, food, utilities, and essential commitments.</li>
         <li><strong>Identify annual expense.</strong> One-time costs: insurance, travel, education, maintenance.</li>
@@ -741,7 +741,7 @@
     </div>
 
     <div class="planning-phase">
-      <h3>Bucket 1: Liquidity Layers</h3>
+      <h3>Basket 1: Liquidity Layers</h3>
       <ol>
         <li><strong>1 month liquidity in Savings.</strong> Immediate access for daily surprises and small emergencies.</li>
         <li><strong>6 months runway in FD.</strong> Fixed Deposits to cover medium-term uncertainties (job loss, illness).</li>
@@ -750,7 +750,7 @@
     </div>
 
     <div class="planning-phase">
-      <h3>Buckets 2–3: Safety &amp; Compounding</h3>
+      <h3>Baskets 2–3: Safety &amp; Compounding</h3>
       <ol>
         <li><strong>EPF/PPF monthly outgo.</strong> Automate contributions to your government-backed retirement accounts.</li>
         <li><strong>Gov Bonds.</strong> Direct holdings of sovereign debt for stability and tax efficiency.</li>
@@ -759,7 +759,7 @@
     </div>
 
     <div class="planning-phase">
-      <h3>Buckets 4–7: Growth &amp; Legacy</h3>
+      <h3>Baskets 4–7: Growth &amp; Legacy</h3>
       <ol>
         <li><strong>Core growth portfolio.</strong> Index funds and balanced funds aligned to your time horizon.</li>
         <li><strong>Conviction positions.</strong> Direct equity or private equity where your expertise creates an edge.</li>
@@ -778,7 +778,7 @@
   </div>
   <div class="philosophy-body">
     <p>Dhamma, in the Pali tradition, means right order — the principle that a life lived with clarity and intention produces outcomes that are both just and enduring. Dhamma Dhan applies this idea to wealth: not merely accumulation, but allocation with purpose.</p>
-    <p>Each of the seven buckets occupies a deliberate place in the spectrum, from the immediately accessible to the generationally patient, from protection to conviction. They align not only with time horizon and risk, but with the seven dimensions of a life lived well: self and family, security, relationships, social responsibility, spiritual work, preservation, and legacy.</p>
+    <p>Each of the seven baskets occupies a deliberate place in the spectrum, from the immediately accessible to the generationally patient, from protection to conviction. They align not only with time horizon and risk, but with the seven dimensions of a life lived well: self and family, security, relationships, social responsibility, spiritual work, preservation, and legacy.</p>
     <p>Build with intention. Hold with dharma.</p>
   </div>
 </section>
