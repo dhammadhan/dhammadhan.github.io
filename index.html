@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhamma Dhan — Rightful Wealth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0c0b09;
+    --bg2: #141310;
+    --bg3: #1c1a16;
+    --text: #f0ece2;
+    --muted: #7a7568;
+    --line: rgba(240,236,226,0.1);
+  }
+
+  :root.light {
+    --bg: #faf8f4;
+    --bg2: #f2ede4;
+    --bg3: #e8e1d5;
+    --text: #1a1814;
+    --muted: #7a7060;
+    --line: rgba(26,24,20,0.1);
+  }
+
+  *, *::before, *::after { transition: background 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 1px solid var(--line);
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .logo span { font-style: italic; font-weight: 400; }
+
+  .logo-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* ── THEME TOGGLE ── */
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem 0.35rem 0.5rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-left: 2rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .theme-toggle:hover { color: var(--text); border-color: var(--muted); }
+
+  .toggle-track {
+    width: 28px;
+    height: 16px;
+    border-radius: 999px;
+    background: var(--line);
+    border: 1px solid var(--muted);
+    position: relative;
+    flex-shrink: 0;
+    transition: background 0.25s, border-color 0.25s;
+  }
+
+  .toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--muted);
+    transition: transform 0.25s, background 0.25s;
+  }
+
+  :root.light .toggle-track { background: #c8b89a; border-color: #a0906e; }
+  :root.light .toggle-thumb { background: #5a4a30; transform: translateX(12px); }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-left: 2.5rem;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--text); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 7rem 3rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    background: linear-gradient(135deg, #7c3aed, #2563eb, #16a34a, #eab308, #ea580c, #dc2626);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-right {
+    padding-bottom: 0.5rem;
+  }
+
+  .hero-right p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 420px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .stat-item dt {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-item dd {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 0 3rem;
+  }
+
+  /* ── BUCKETS GRID ── */
+  .eggs-section {
+    padding: 4rem 3rem 6rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  .section-header p {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .eggs-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+  }
+
+  .egg-card {
+    background: var(--bg2);
+    padding: 2rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: background 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .egg-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .egg-card:hover { background: var(--bg3); }
+  .egg-card:hover::before { opacity: 1; }
+
+  /* Per-egg accent colors */
+  .egg-1 { --egg-color: #8b5cf6; --egg-glow: rgba(139,92,246,0.15); }
+  .egg-2 { --egg-color: #6366f1; --egg-glow: rgba(99,102,241,0.15); }
+  .egg-3 { --egg-color: #3b82f6; --egg-glow: rgba(59,130,246,0.15); }
+  .egg-4 { --egg-color: #22c55e; --egg-glow: rgba(34,197,94,0.15); }
+  .egg-5 { --egg-color: #eab308; --egg-glow: rgba(234,179,8,0.15); }
+  .egg-6 { --egg-color: #f97316; --egg-glow: rgba(249,115,22,0.15); }
+  .egg-7 { --egg-color: #ef4444; --egg-glow: rgba(239,68,68,0.15); }
+
+  .egg-card::before { background: var(--egg-color); }
+
+  /* ── BUCKET ICON ── */
+  .egg-svg-handle {
+    stroke: var(--egg-color);
+    stroke-width: 1.5;
+    fill: none;
+    opacity: 0.55;
+  }
+
+  /* The bucket illustration */
+  .bucket-icon {
+    width: 58px;
+    height: 52px;
+    margin: 0 auto;
+  }
+
+  .egg-svg-body {
+    fill: var(--egg-glow);
+    stroke: var(--egg-color);
+    stroke-width: 1px;
+    transition: fill 0.3s;
+  }
+
+  .egg-card:hover .egg-svg-body {
+    fill: var(--egg-glow);
+  }
+
+  .egg-svg-sheen {
+    fill: var(--egg-color);
+    opacity: 0.25;
+  }
+
+  .egg-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--egg-color);
+    text-align: center;
+  }
+
+  .egg-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .egg-subtitle {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  .egg-holdings {
+    list-style: none;
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+  }
+
+  .eggs-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--egg-color);
+    opacity: 0.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .egg-holdings li {
+    font-size: 0.72rem;
+    color: var(--muted);
+    padding: 0.2rem 0;
+    padding-left: 0.8rem;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .egg-holdings li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 4px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--egg-color);
+    opacity: 0.6;
+  }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy {
+    padding: 5rem 3rem;
+    border-top: 1px solid var(--line);
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .philosophy h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .philosophy h2 em { font-style: italic; }
+
+  .philosophy-body p {
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    max-width: 600px;
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .principle {
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 1.2rem;
+  }
+
+  .principle dt {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .principle dd {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  footer span { font-family: 'DM Mono', monospace; letter-spacing: 0.08em; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero { animation: fadeUp 0.7s ease both; }
+  .eggs-section { animation: fadeUp 0.7s 0.15s ease both; }
+
+  .egg-card:nth-child(1) { animation: fadeUp 0.5s 0.05s ease both; }
+  .egg-card:nth-child(2) { animation: fadeUp 0.5s 0.10s ease both; }
+  .egg-card:nth-child(3) { animation: fadeUp 0.5s 0.15s ease both; }
+  .egg-card:nth-child(4) { animation: fadeUp 0.5s 0.20s ease both; }
+  .egg-card:nth-child(5) { animation: fadeUp 0.5s 0.25s ease both; }
+  .egg-card:nth-child(6) { animation: fadeUp 0.5s 0.30s ease both; }
+  .egg-card:nth-child(7) { animation: fadeUp 0.5s 0.35s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .eggs-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (max-width: 768px) {
+    header { padding: 1.2rem 1.5rem; }
+    nav { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 4rem 1.5rem 3rem; gap: 2.5rem; }
+    .eggs-section { padding: 3rem 1.5rem; }
+    .eggs-grid { grid-template-columns: repeat(2, 1fr); }
+    .philosophy { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2rem; }
+    .principles { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Dhamma <span>Dhan</span><span class="logo-tagline">Rightful Wealth</span></div>
+  <nav>
+    <a href="#eggs">The Seven Buckets</a>
+    <a href="#philosophy">Dharma</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span class="toggle-track"><span class="toggle-thumb"></span></span>
+      <span id="theme-label">Light</span>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-label">धम्म धन — A Framework for Rightful Wealth</p>
+    <h1>Wealth earned<br>with clarity,<br>held with <em>dharma.</em></h1>
+  </div>
+  <div class="hero-right">
+    <p>Dhamma Dhan is the practice of building wealth in alignment with right action — not just what grows, but what is sound, purposeful, and worthy of being passed forward. Seven buckets. Twenty-five eggs. A complete life's portfolio.</p>
+    <dl class="hero-stats">
+      <div class="stat-item">
+        <dt>Buckets</dt>
+        <dd>7</dd>
+      </div>
+      <div class="stat-item">
+        <dt>Instruments</dt>
+        <dd>25</dd>
+      </div>
+      <div class="stat-item">
+        <dt>Time horizons</dt>
+        <dd>All</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- EGGS GRID -->
+<section class="eggs-section" id="eggs">
+  <div class="section-header">
+    <h2>The Seven Buckets</h2>
+    <p>Each bucket holds its eggs — instruments chosen for that layer's purpose.</p>
+  </div>
+
+  <div class="eggs-grid">
+
+    <!-- 1. Violet -->
+    <article class="egg-card egg-1">
+      <p class="egg-number">01 — VIOLET</p>
+      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+      </svg>
+      <div>
+        <p class="egg-name">Cash &amp;<br>Liquidity</p>
+        <p class="egg-subtitle">Immediate access</p>
+      </div>
+      <p class="eggs-label">Eggs</p>
+      <ul class="egg-holdings">
+        <li>Savings account</li>
+        <li>Liquid funds</li>
+        <li>Fixed deposits</li>
+      </ul>
+    </article>
+
+    <!-- 2. Indigo -->
+    <article class="egg-card egg-2">
+      <p class="egg-number">02 — INDIGO</p>
+      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+      </svg>
+      <div>
+        <p class="egg-name">Sovereign<br>Safety</p>
+        <p class="egg-subtitle">Government-backed</p>
+      </div>
+      <p class="eggs-label">Eggs</p>
+      <ul class="egg-holdings">
+        <li>PPF</li>
+        <li>EPF</li>
+        <li>Government bonds</li>
+        <li>RBI bonds</li>
+      </ul>
+    </article>
+
+    <!-- 3. Blue -->
+    <article class="egg-card egg-3">
+      <p class="egg-number">03 — BLUE</p>
+      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+      </svg>
+      <div>
+        <p class="egg-name">Balanced &amp;<br>Retirement</p>
+        <p class="egg-subtitle">Steady compounding</p>
+      </div>
+      <p class="eggs-label">Eggs</p>
+      <ul class="egg-holdings">
+        <li>NPS</li>
+        <li>Conservative hybrid funds</li>
+        <li>Corporate debt</li>
+        <li>Balanced advantage funds</li>
+      </ul>
+    </article>
+
+    <!-- 4. Green -->
+    <article class="egg-card egg-4">
+      <p class="egg-number">04 — GREEN</p>
+      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+      </svg>
+      <div>
+        <p class="egg-name">Core<br>Growth</p>
+        <p class="egg-subtitle">Market participation</p>
+      </div>
+      <p class="eggs-label">Eggs</p>
+      <ul class="egg-holdings">
+        <li>Index funds</li>
+        <li>Flexicap mutual funds</li>
+        <li>Large-cap mutual funds</li>
+        <li>SIP-based growth assets</li>
+      </ul>
+    </article>
+
+    <!-- 5. Yellow -->
+    <article class="egg-card egg-5">
+      <p class="egg-number">05 — YELLOW</p>
+      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+      </svg>
+      <div>
+        <p class="egg-name">Conviction<br>Equity</p>
+        <p class="egg-subtitle">High-confidence bets</p>
+      </div>
+      <p class="eggs-label">Eggs</p>
+      <ul class="egg-holdings">
+        <li>Direct equity</li>
+        <li>Sectoral opportunities</li>
+        <li>High-conviction stocks</li>
+      </ul>
+    </article>
+
+    <!-- 6. Orange -->
+    <article class="egg-card egg-6">
+      <p class="egg-number">06 — ORANGE</p>
+      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+      </svg>
+      <div>
+        <p class="egg-name">Store of<br>Value</p>
+        <p class="egg-subtitle">Inflation hedge</p>
+      </div>
+      <p class="eggs-label">Eggs</p>
+      <ul class="egg-holdings">
+        <li>Physical gold</li>
+        <li>Gold ETFs</li>
+        <li>Sovereign Gold Bonds</li>
+      </ul>
+    </article>
+
+    <!-- 7. Red -->
+    <article class="egg-card egg-7">
+      <p class="egg-number">07 — RED</p>
+      <svg class="bucket-icon" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M9,24 L14,56 L38,56 L43,24 Z" class="egg-svg-body"/>
+        <rect x="7" y="16" width="38" height="9" rx="3" class="egg-svg-sheen"/>
+        <path d="M16,16 C16,3 36,3 36,16" class="egg-svg-handle"/>
+      </svg>
+      <div>
+        <p class="egg-name">Legacy &amp;<br>Hard Assets</p>
+        <p class="egg-subtitle">Generational wealth</p>
+      </div>
+      <p class="eggs-label">Eggs</p>
+      <ul class="egg-holdings">
+        <li>REITs</li>
+        <li>Land</li>
+        <li>Residential property</li>
+        <li>Long-term real estate</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div>
+    <h2>The <em>dharma</em><br>of building<br>wealth.</h2>
+  </div>
+  <div class="philosophy-body">
+    <p>Dhamma, in the Pali tradition, means right order — the principle that a life lived with clarity and intention produces outcomes that are both just and enduring. Dhamma Dhan applies this idea to wealth: not merely accumulation, but allocation with purpose.</p>
+    <p>Most portfolios are built by accident — assets gathered in response to moments, not to meaning. This framework insists otherwise. Each of the seven buckets occupies a deliberate place in the spectrum, from the immediately accessible to the generationally patient, from certainty to conviction.</p>
+    <dl class="principles">
+      <div class="principle">
+        <dt>Ahimsa — Do no harm</dt>
+        <dd>Violet and Indigo protect first. Stability is not timidity — it is the foundation that allows everything else to grow.</dd>
+      </div>
+      <div class="principle">
+        <dt>Viveka — Discernment</dt>
+        <dd>Blue, Green, and Yellow are distinguished by horizon and conviction, not risk alone. Know what you own and why.</dd>
+      </div>
+      <div class="principle">
+        <dt>Aparigraha — Non-grasping</dt>
+        <dd>Orange gold stores value without speculation. Wealth preserved is not wealth hoarded — it is wealth respected.</dd>
+      </div>
+      <div class="principle">
+        <dt>Seva — Service beyond self</dt>
+        <dd>Red hard assets outlast a single lifetime. The final bucket is not for you alone — it is what you leave behind.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <span>Dhamma Dhan — Rightful Wealth</span>
+  <span>Not financial advice. Build with intention, hold with dharma.</span>
+</footer>
+
+<script>
+  function toggleTheme() {
+    const root = document.documentElement;
+    const label = document.getElementById('theme-label');
+    root.classList.toggle('light');
+    label.textContent = root.classList.contains('light') ? 'Dark' : 'Light';
+  }
+</script>
+</body>
+</html>
