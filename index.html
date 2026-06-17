@@ -334,6 +334,17 @@
     letter-spacing: 0.04em;
   }
 
+  .egg-purpose {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border-radius: 2px;
+    background: var(--bg3);
+  }
+
   .egg-holdings {
     list-style: none;
     margin-top: auto;
@@ -372,6 +383,69 @@
     opacity: 0.6;
   }
 
+  /* ── PLANNING SECTION ── */
+  .planning-section {
+    padding: 4rem 3rem 6rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 1px solid var(--line);
+  }
+
+  .planning-intro {
+    margin-bottom: 3rem;
+  }
+
+  .planning-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .planning-intro p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 700px;
+    line-height: 1.8;
+  }
+
+  .planning-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .planning-phase {
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 1.5rem;
+  }
+
+  .planning-phase h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .planning-phase ol {
+    list-style-position: inside;
+    margin-left: 0;
+  }
+
+  .planning-phase li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+  }
+
+  .planning-phase li strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
   /* ── PHILOSOPHY ── */
   .philosophy {
     padding: 5rem 3rem;
@@ -401,34 +475,6 @@
     max-width: 600px;
   }
 
-  .principles {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .principle {
-    border: 1px solid var(--line);
-    border-radius: 2px;
-    padding: 1.2rem;
-  }
-
-  .principle dt {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-
-  .principle dd {
-    font-size: 0.88rem;
-    color: var(--text);
-    line-height: 1.6;
-  }
-
   /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--line);
@@ -450,6 +496,7 @@
 
   .hero { animation: fadeUp 0.7s ease both; }
   .eggs-section { animation: fadeUp 0.7s 0.15s ease both; }
+  .planning-section { animation: fadeUp 0.7s 0.3s ease both; }
 
   .egg-card:nth-child(1) { animation: fadeUp 0.5s 0.05s ease both; }
   .egg-card:nth-child(2) { animation: fadeUp 0.5s 0.10s ease both; }
@@ -469,8 +516,8 @@
     .hero { grid-template-columns: 1fr; padding: 4rem 1.5rem 3rem; gap: 2.5rem; }
     .eggs-section { padding: 3rem 1.5rem; }
     .eggs-grid { grid-template-columns: repeat(2, 1fr); }
+    .planning-grid { grid-template-columns: 1fr; }
     .philosophy { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2rem; }
-    .principles { grid-template-columns: 1fr; }
     footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
@@ -481,6 +528,7 @@
   <div class="logo">Dhamma <span>Dhan</span><span class="logo-tagline">Rightful Wealth</span></div>
   <nav>
     <a href="#eggs">The Seven Buckets</a>
+    <a href="#planning">Planning</a>
     <a href="#philosophy">Dharma</a>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
       <span class="toggle-track"><span class="toggle-thumb"></span></span>
@@ -496,15 +544,15 @@
     <h1>Wealth earned<br>with clarity,<br>held with <em>dharma.</em></h1>
   </div>
   <div class="hero-right">
-    <p>Dhamma Dhan is the practice of building wealth in alignment with right action — not just what grows, but what is sound, purposeful, and worthy of being passed forward. Seven buckets. Twenty-five eggs. A complete life's portfolio.</p>
+    <p>Dhamma Dhan is the practice of building wealth in alignment with right action — not just what grows, but what is sound, purposeful, and worthy of being passed forward. Seven buckets. Multiple instruments. A complete life's portfolio.</p>
     <dl class="hero-stats">
       <div class="stat-item">
         <dt>Buckets</dt>
         <dd>7</dd>
       </div>
       <div class="stat-item">
-        <dt>Instruments</dt>
-        <dd>25</dd>
+        <dt>Purposes</dt>
+        <dd>7</dd>
       </div>
       <div class="stat-item">
         <dt>Time horizons</dt>
@@ -520,7 +568,7 @@
 <section class="eggs-section" id="eggs">
   <div class="section-header">
     <h2>The Seven Buckets</h2>
-    <p>Each bucket holds its eggs — instruments chosen for that layer's purpose.</p>
+    <p>Each bucket holds its instruments — chosen for purpose, time horizon, and life stage.</p>
   </div>
 
   <div class="eggs-grid">
@@ -537,7 +585,8 @@
         <p class="egg-name">Cash &amp;<br>Liquidity</p>
         <p class="egg-subtitle">Immediate access</p>
       </div>
-      <p class="eggs-label">Eggs</p>
+      <p class="egg-purpose"><strong>Self, Family &amp; Dependents:</strong> Providing for your own comfort and the well-being of your parents, spouse, children, and workers.</p>
+      <p class="eggs-label">Instruments</p>
       <ul class="egg-holdings">
         <li>Savings account</li>
         <li>Liquid funds</li>
@@ -557,12 +606,12 @@
         <p class="egg-name">Sovereign<br>Safety</p>
         <p class="egg-subtitle">Government-backed</p>
       </div>
-      <p class="eggs-label">Eggs</p>
+      <p class="egg-purpose"><strong>Security against Calamities:</strong> Guarding resources against unexpected losses from fire, floods, rulers, thieves, or unloved heirs.</p>
+      <p class="eggs-label">Instruments</p>
       <ul class="egg-holdings">
+        <li>EPF/VPF</li>
         <li>PPF</li>
-        <li>EPF</li>
-        <li>Government bonds</li>
-        <li>RBI bonds</li>
+        <li>Gov/RBI Bonds</li>
       </ul>
     </article>
 
@@ -578,12 +627,12 @@
         <p class="egg-name">Balanced &amp;<br>Retirement</p>
         <p class="egg-subtitle">Steady compounding</p>
       </div>
-      <p class="eggs-label">Eggs</p>
+      <p class="egg-purpose"><strong>Friends &amp; Associates:</strong> Sharing happiness and maintaining harmonious relationships by supporting friends, family, and colleagues.</p>
+      <p class="eggs-label">Instruments</p>
       <ul class="egg-holdings">
         <li>NPS</li>
         <li>Conservative hybrid funds</li>
         <li>Corporate debt</li>
-        <li>Balanced advantage funds</li>
       </ul>
     </article>
 
@@ -599,12 +648,12 @@
         <p class="egg-name">Core<br>Growth</p>
         <p class="egg-subtitle">Market participation</p>
       </div>
-      <p class="eggs-label">Eggs</p>
+      <p class="egg-purpose"><strong>Fivefold Oblations:</strong> Fulfilling social and familial duties by making offerings to relatives, guests, ancestors, the state/king, and deities.</p>
+      <p class="eggs-label">Instruments</p>
       <ul class="egg-holdings">
         <li>Index funds</li>
         <li>Flexicap mutual funds</li>
-        <li>Large-cap mutual funds</li>
-        <li>SIP-based growth assets</li>
+        <li>Balanced Advantage Fund</li>
       </ul>
     </article>
 
@@ -620,11 +669,12 @@
         <p class="egg-name">Conviction<br>Equity</p>
         <p class="egg-subtitle">High-confidence bets</p>
       </div>
-      <p class="eggs-label">Eggs</p>
+      <p class="egg-purpose"><strong>Spiritual Community Support:</strong> Providing charity and alms to ethical contemplatives, monks, and spiritual teachers dedicated to peace.</p>
+      <p class="eggs-label">Instruments</p>
       <ul class="egg-holdings">
         <li>Direct equity</li>
-        <li>Sectoral opportunities</li>
-        <li>High-conviction stocks</li>
+        <li>Business</li>
+        <li>Private Equity</li>
       </ul>
     </article>
 
@@ -640,7 +690,8 @@
         <p class="egg-name">Store of<br>Value</p>
         <p class="egg-subtitle">Inflation hedge</p>
       </div>
-      <p class="eggs-label">Eggs</p>
+      <p class="egg-purpose">Preservation of wealth across generations without speculation — value protected for those who come after.</p>
+      <p class="eggs-label">Instruments</p>
       <ul class="egg-holdings">
         <li>Physical gold</li>
         <li>Gold ETFs</li>
@@ -660,17 +711,65 @@
         <p class="egg-name">Legacy &amp;<br>Hard Assets</p>
         <p class="egg-subtitle">Generational wealth</p>
       </div>
-      <p class="eggs-label">Eggs</p>
+      <p class="egg-purpose">Durable assets that outlast a single lifetime — what you leave behind serves those who inherit it.</p>
+      <p class="eggs-label">Instruments</p>
       <ul class="egg-holdings">
         <li>REITs</li>
-        <li>Land</li>
         <li>Residential property</li>
-        <li>Long-term real estate</li>
+        <li>Commercial Property</li>
       </ul>
     </article>
 
   </div>
 </section>
+
+<!-- PLANNING -->
+<section class="planning-section" id="planning">
+  <div class="planning-intro">
+    <h2>Building Your Buckets</h2>
+    <p>A practical framework to organize your financial life across the seven buckets. Begin with your daily reality—expenses and dependents—then build safety layers, then move toward growth and legacy.</p>
+  </div>
+
+  <div class="planning-grid">
+    <div class="planning-phase">
+      <h3>Bucket 1: Foundation</h3>
+      <ol>
+        <li><strong>Identify monthly expense.</strong> Your baseline outflow for household, food, utilities, and essential commitments.</li>
+        <li><strong>Identify annual expense.</strong> One-time costs: insurance, travel, education, maintenance.</li>
+        <li><strong>RD for annual expenses.</strong> Set up Recurring Deposits to cover each annual obligation.</li>
+      </ol>
+    </div>
+
+    <div class="planning-phase">
+      <h3>Bucket 1: Liquidity Layers</h3>
+      <ol>
+        <li><strong>1 month liquidity in Savings.</strong> Immediate access for daily surprises and small emergencies.</li>
+        <li><strong>6 months runway in FD.</strong> Fixed Deposits to cover medium-term uncertainties (job loss, illness).</li>
+        <li><strong>6 months runway in Liquid Fund.</strong> Quick-access funds that preserve capital while earning a modest return.</li>
+      </ol>
+    </div>
+
+    <div class="planning-phase">
+      <h3>Buckets 2–3: Safety &amp; Compounding</h3>
+      <ol>
+        <li><strong>EPF/PPF monthly outgo.</strong> Automate contributions to your government-backed retirement accounts.</li>
+        <li><strong>Gov Bonds.</strong> Direct holdings of sovereign debt for stability and tax efficiency.</li>
+        <li><strong>Gilt Mutual Funds / SSY.</strong> For longer durations, gilt funds or Sukanya Samriddhi for dependents.</li>
+      </ol>
+    </div>
+
+    <div class="planning-phase">
+      <h3>Buckets 4–7: Growth &amp; Legacy</h3>
+      <ol>
+        <li><strong>Core growth portfolio.</strong> Index funds and balanced funds aligned to your time horizon.</li>
+        <li><strong>Conviction positions.</strong> Direct equity or private equity where your expertise creates an edge.</li>
+        <li><strong>Gold and real assets.</strong> Inflation hedge and generational wealth for your heirs.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
 
 <!-- PHILOSOPHY -->
 <section class="philosophy" id="philosophy">
@@ -679,25 +778,8 @@
   </div>
   <div class="philosophy-body">
     <p>Dhamma, in the Pali tradition, means right order — the principle that a life lived with clarity and intention produces outcomes that are both just and enduring. Dhamma Dhan applies this idea to wealth: not merely accumulation, but allocation with purpose.</p>
-    <p>Most portfolios are built by accident — assets gathered in response to moments, not to meaning. This framework insists otherwise. Each of the seven buckets occupies a deliberate place in the spectrum, from the immediately accessible to the generationally patient, from certainty to conviction.</p>
-    <dl class="principles">
-      <div class="principle">
-        <dt>Ahimsa — Do no harm</dt>
-        <dd>Violet and Indigo protect first. Stability is not timidity — it is the foundation that allows everything else to grow.</dd>
-      </div>
-      <div class="principle">
-        <dt>Viveka — Discernment</dt>
-        <dd>Blue, Green, and Yellow are distinguished by horizon and conviction, not risk alone. Know what you own and why.</dd>
-      </div>
-      <div class="principle">
-        <dt>Aparigraha — Non-grasping</dt>
-        <dd>Orange gold stores value without speculation. Wealth preserved is not wealth hoarded — it is wealth respected.</dd>
-      </div>
-      <div class="principle">
-        <dt>Seva — Service beyond self</dt>
-        <dd>Red hard assets outlast a single lifetime. The final bucket is not for you alone — it is what you leave behind.</dd>
-      </div>
-    </dl>
+    <p>Each of the seven buckets occupies a deliberate place in the spectrum, from the immediately accessible to the generationally patient, from protection to conviction. They align not only with time horizon and risk, but with the seven dimensions of a life lived well: self and family, security, relationships, social responsibility, spiritual work, preservation, and legacy.</p>
+    <p>Build with intention. Hold with dharma.</p>
   </div>
 </section>
 
