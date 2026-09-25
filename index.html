@@ -411,8 +411,12 @@
 
   .planning-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+
+  @media (max-width: 1000px) {
+    .planning-grid { grid-template-columns: 1fr; }
   }
 
   .planning-phase {
@@ -585,7 +589,7 @@
         <p class="basket-name">Cash &amp;<br>Liquidity</p>
         <p class="basket-subtitle">Immediate access</p>
       </div>
-      <p class="basket-purpose"><strong>Self, Family &amp; Dependents:</strong> Providing for your own comfort and the well-being of your parents, spouse, children, and workers.</p>
+      <p class="basket-purpose">Safety, immediate access to cash.</p>
       <p class="eggs-label">Eggs</p>
       <ul class="basket-eggs">
         <li>Savings account</li>
@@ -606,11 +610,11 @@
         <p class="basket-name">Sovereign<br>Safety</p>
         <p class="basket-subtitle">Government-backed</p>
       </div>
-      <p class="basket-purpose"><strong>Security against Calamities:</strong> Guarding resources against unexpected losses from fire, floods, rulers, thieves, or unloved heirs.</p>
+      <p class="basket-purpose">Capital preservation backed by government.</p>
       <p class="eggs-label">Eggs</p>
       <ul class="basket-eggs">
-        <li>EPF/VPF</li>
-        <li>PPF</li>
+        <li>EPF/SSY/PPF</li>
+        <li>POMIS/SCSS</li>
         <li>Gov/RBI Bonds</li>
       </ul>
     </article>
@@ -627,12 +631,12 @@
         <p class="basket-name">Balanced &amp;<br>Retirement</p>
         <p class="basket-subtitle">Steady compounding</p>
       </div>
-      <p class="basket-purpose"><strong>Friends &amp; Associates:</strong> Sharing happiness and maintaining harmonious relationships by supporting friends, family, and colleagues.</p>
+      <p class="basket-purpose">Predictable cash flow with moderate risk.</p>
       <p class="eggs-label">Eggs</p>
       <ul class="basket-eggs">
-        <li>NPS</li>
-        <li>Conservative hybrid funds</li>
         <li>Corporate debt</li>
+        <li>Conservative hybrid funds</li>
+        <li>NPS/NPS Vatsalya</li>
       </ul>
     </article>
 
@@ -648,12 +652,12 @@
         <p class="basket-name">Core<br>Growth</p>
         <p class="basket-subtitle">Market participation</p>
       </div>
-      <p class="basket-purpose"><strong>Fivefold Oblations:</strong> Fulfilling social and familial duties by making offerings to relatives, guests, ancestors, the state/king, and deities.</p>
+      <p class="basket-purpose">Long-term wealth creation through diversification.</p>
       <p class="eggs-label">Eggs</p>
       <ul class="basket-eggs">
-        <li>Index funds</li>
+        <li>Nifty 50 Index funds</li>
         <li>Flexicap mutual funds</li>
-        <li>Balanced Advantage Fund</li>
+        <li>Dynamic Asset Allocation</li>
       </ul>
     </article>
 
@@ -669,12 +673,12 @@
         <p class="basket-name">Conviction<br>Equity</p>
         <p class="basket-subtitle">High-confidence bets</p>
       </div>
-      <p class="basket-purpose"><strong>Spiritual Community Support:</strong> Providing charity and alms to ethical contemplatives, monks, and spiritual teachers dedicated to peace.</p>
+      <p class="basket-purpose">Direct participation in businesses.</p>
       <p class="eggs-label">Eggs</p>
       <ul class="basket-eggs">
         <li>Direct equity</li>
         <li>Business</li>
-        <li>Private Equity</li>
+        <li>Direct investments</li>
       </ul>
     </article>
 
@@ -690,12 +694,12 @@
         <p class="basket-name">Store of<br>Value</p>
         <p class="basket-subtitle">Inflation hedge</p>
       </div>
-      <p class="basket-purpose">Preservation of wealth across generations without speculation — value protected for those who come after.</p>
+      <p class="basket-purpose">Protection against inflation and uncertainty.</p>
       <p class="eggs-label">Eggs</p>
       <ul class="basket-eggs">
-        <li>Physical gold</li>
-        <li>Gold ETFs</li>
         <li>Sovereign Gold Bonds</li>
+        <li>Gold ETFs</li>
+        <li>Physical gold</li>
       </ul>
     </article>
 
@@ -711,7 +715,7 @@
         <p class="basket-name">Legacy &amp;<br>Hard Assets</p>
         <p class="basket-subtitle">Generational wealth</p>
       </div>
-      <p class="basket-purpose">Durable assets that outlast a single lifetime — what you leave behind serves those who inherit it.</p>
+      <p class="basket-purpose">Tangible income-generating assets.</p>
       <p class="eggs-label">Eggs</p>
       <ul class="basket-eggs">
         <li>REITs</li>
@@ -732,20 +736,14 @@
 
   <div class="planning-grid">
     <div class="planning-phase">
-      <h3>Basket 1: Foundation</h3>
+      <h3>Basket 1 Steps</h3>
       <ol>
         <li><strong>Identify monthly expense.</strong> Your baseline outflow for household, food, utilities, and essential commitments.</li>
         <li><strong>Identify annual expense.</strong> One-time costs: insurance, travel, education, maintenance.</li>
-        <li><strong>RD for annual expenses.</strong> Set up Recurring Deposits to cover each annual obligation.</li>
-      </ol>
-    </div>
-
-    <div class="planning-phase">
-      <h3>Basket 1: Liquidity Layers</h3>
-      <ol>
+        <li><strong>RD for all one time annual expense.</strong> Set up Recurring Deposits to cover each annual obligation.</li>
         <li><strong>1 month liquidity in Savings.</strong> Immediate access for daily surprises and small emergencies.</li>
         <li><strong>6 months runway in FD.</strong> Fixed Deposits to cover medium-term uncertainties (job loss, illness).</li>
-        <li><strong>6 months runway in Liquid Fund.</strong> Quick-access funds that preserve capital while earning a modest return.</li>
+        <li><strong>6 months runway in Liquid fund.</strong> Quick-access funds that preserve capital while earning a modest return.</li>
       </ol>
     </div>
 
